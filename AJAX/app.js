@@ -24,6 +24,12 @@ function loadData(){
       */
 
       xhr.onreadystatechange = function(){
+            // ready states
+            // 0: unset 
+            // 1: opened
+            // 2: recived
+            // 3: loading
+            // 4: done
             if(this.status === 200 && this.readyState === 4){
                   document.getElementById('output').innerHTML = `
                   <h1>${this.responseText}</h1>
