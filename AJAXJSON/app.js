@@ -65,7 +65,6 @@ function loadEmployees(){
                   document.getElementById('employees').innerHTML = output;
                
             }
-
       
       }
 

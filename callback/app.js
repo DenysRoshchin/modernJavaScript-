@@ -1,43 +1,21 @@
-// callback 
-// const cities = ['london', 'new york', 'madrid', 'paris', 'berlin'];
+// promises
 
-// inline callback
-// cities.forEach(function(city){
-//       console.log(city)
-// });
+const applyDiscount = new Promise(function(resolve, reject){
+      // resolve is going execute when the function i succesfull
+      // reject when the function has failed
 
-// callback with funct declare
-// function callback(city){
-//       console.log(city);
-// }
-// cities.forEach(callback);
+      const discount = false;
 
-const countries = ['france', 'spain', 'portugal', 'austraian', 'england', 'iran'];
+      if(discount){
+            resolve('discount applied')
+      } else {
+            reject('discount failed...')
+      }
 
-function newCountry(country, callback){
-      setTimeout(function(){
-            console.log('fisrt')
-            // add the new country
-            countries.push(country);
+})
 
-            // execute the callback
-            callback();
-      }, 2000)
-}
-
-// display the countries after 1 sec 
-function displayCountries(){
-      setTimeout(function(){
-            let html = '';
-            countries.forEach(function(country){
-                  html += `<li>${country}</li>`
-            });
-            document.body.innerHTML = html;
-      }, 1000);
-}
-
-// add a new country
-newCountry('germany', displayCountries);
-
-// print the countries
-displayCountries();
+applyDiscount.then(function(result){
+      console.log(result)
+}).catch(function(result){
+      console.log(result)
+})
